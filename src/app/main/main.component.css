@@ -1,0 +1,88 @@
+:host {
+    grid-area: content;
+    min-height: 0 !important;
+    min-width: 0 !important;
+    font-family: inherit;
+}
+.main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-areas: "menu view";
+    grid-template-rows: 1fr;
+    grid-template-columns: 11em 1fr;
+}
+.menu {
+    grid-area: menu;
+    background-color: #f4f4f4;
+    padding-left: 0.5em;
+    padding-right: 0.5em;
+    padding-top: 2em;
+    padding-bottom: 4em;
+    overflow: hidden;
+}
+.mat-expansion-panel {
+    background-color: #f4f4f4;
+    box-shadow: none;
+    padding-bottom: 0;
+    margin-bottom: 0;
+}
+.mat-expansion-panel-header {
+    line-height: 1.3em !important;
+    font-size: 1.1em !important;
+    font-family: inherit !important;
+}
+.mat-action-row {
+    justify-content: start;
+    padding-bottom: 0;
+    font-family: inherit !important;
+    border: none;
+}
+.view {
+    grid-area: view;
+    min-height: 0 !important;
+    min-width: 0 !important;
+}
+.menu__item {
+    font-size: 1em;
+    color: blue;
+    cursor: pointer;
+    text-decoration: none;
+}
+.menu__item-place {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0.5em;
+}
+.menu__item:hover {
+    color: #FCAC45;
+}
+.menu__item:hover:active {
+    color: #000;
+}
+.menu__item-input {
+    font-size: 0.85em;
+    color: #000;
+}
+.menu__item-input-place {
+    display: block;
+    margin-bottom: 1em;
+    margin-left: 0.5em;
+    margin-right: 0.5em;
+    width: calc(100% - 0.5em - 0.5em);
+}
+.target {
+    background-color:#3f51b5;
+}
+.menu__target {
+    font-size: 1em;
+    color: white;
+    cursor: pointer;
+    text-decoration: none;
+}
+.menu__target:hover {
+    color: #FCAC45;
+}
+.menu__target:hover:active {
+    color: #000;
+}

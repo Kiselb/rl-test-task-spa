@@ -1,18 +1,57 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule, HttpClient } from '@angular/common/http';
+
+import { MatTableModule } from '@angular/material/table';
+import { MatSortModule } from '@angular/material/sort';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+import { MatButtonModule } from '@angular/material/button';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { MainComponent } from './main/main.component';
+import { UsersActiveComponent } from './users/users-active/users-active.component';
+import { RolesActiveComponent } from './roles/roles-active/roles-active.component';
+import { RoleAddNewComponent } from './roles/role-add-new/role-add-new.component';
+import { UserAddNewComponent } from './users/user-add-new/user-add-new.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    MainComponent,
+    UsersActiveComponent,
+    RolesActiveComponent,
+    RoleAddNewComponent,
+    UserAddNewComponent,
+    //BrowserAnimationsModule,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    HttpClientModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDialogModule, 
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatExpansionModule,
+    MatProgressSpinnerModule,
   ],
-  providers: [],
+  providers: [
+    HttpClientModule,
+    HttpClient
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,82 @@
+:host {
+    grid-area: view;
+    display: grid;
+    grid-template-areas:
+        "search"
+        "table"
+        "paginator";
+    grid-template-rows: 3.25em 1fr 3em;
+    grid-template-columns: 1fr;
+    grid-gap: 0px;
+    font-size: 1em;
+    min-height: 100% !important;
+    min-width: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    padding: 1.5em;
+    box-sizing: border-box;
+    position: relative;
+}
+.search {
+    grid-area: search;
+    display: flex;
+    padding-bottom: 1em;
+}
+.search-input {
+    min-height: 2.25em;
+    padding-left: 0.5em;
+}
+.search-button {
+    margin-left: 1em;
+}
+.table-container {
+    grid-area: table;
+    overflow: scroll;
+    position: relative;
+}
+.table-paginator {
+    grid-area: paginator;
+    overflow: hidden;
+}
+table {
+    min-width: 100%;
+}
+th.mat-column-position, td.mat-column-position {
+    padding-left: 0.75em;
+}
+.mat-header-row {
+    position: relative;
+    
+}
+.mat-row.hovered {
+    background: #ccc !important;
+}
+.mat-row.highlighted {
+    background-color: #9ec8e9 !important;
+}
+.mat-row:nth-child(odd) {
+    background-color:#F2F2F2;
+}
+.mat-cell,
+.mat-header-cell {
+    white-space: nowrap;
+    vertical-align: middle;
+    padding-right: 1.25em;
+    overflow: hidden;
+    text-align: left;
+    text-overflow: ellipsis;
+    position: relative;
+}
+.mat-cell:first-of-type {
+    padding-left: 1.25em;
+}
+/*
+    Column Widths
+*/
+.mat-column-Id {
+    min-width: 2em;
+    max-width: 2em;
+}
+.mat-column-Name {
+    min-width: 20em;
+}

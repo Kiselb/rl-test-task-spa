@@ -1,0 +1,35 @@
+<div class="main">
+    <div class="menu">
+        <mat-accordion>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                      Персоны
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-action-row>
+                    <a [routerLink]="['/users/active']" class="menu__item menu__item-place">Активные</a>
+                </mat-action-row>
+                <mat-action-row>
+                    <a [routerLink]="['/users/addnew']" class="menu__item menu__item-place">Новый</a>
+                </mat-action-row>
+            </mat-expansion-panel>
+            <mat-expansion-panel>
+                <mat-expansion-panel-header>
+                    <mat-panel-title>
+                        Роли
+                    </mat-panel-title>
+                </mat-expansion-panel-header>
+                <mat-action-row>
+                    <a [routerLink]="['/roles/active']" class="menu__item menu__item-place" >Активные</a>
+                </mat-action-row>
+                <mat-action-row>
+                    <a [routerLink]="['/roles/addnew']" class="menu__item menu__item-place" >Новая</a>
+                </mat-action-row>
+            </mat-expansion-panel>
+        </mat-accordion>
+    </div>
+    <div class="view">
+        <router-outlet></router-outlet>
+    </div>
+</div>
