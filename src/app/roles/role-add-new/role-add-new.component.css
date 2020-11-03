@@ -1,0 +1,28 @@
+:host {
+    grid-area: view;
+    display: grid;
+    grid-template-areas:
+        "header"
+        "rolename"
+        "button";
+    grid-template-rows: 2em 2.25em 2.25em;
+    grid-template-columns: 10em;
+    grid-gap: 0.5em;
+    font-size: 1em;
+    min-height: 100% !important;
+    min-width: 100% !important;
+    max-height: 100% !important;
+    max-width: 100% !important;
+    padding: 1.5em;
+    box-sizing: border-box;
+    position: relative;
+}
+.header {
+    grid-area: header;
+}
+.rolename {
+    grid-area: rolename;
+}
+.button {
+    grid-area: button;
+}

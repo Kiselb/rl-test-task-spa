@@ -22,6 +22,8 @@ import { UsersActiveComponent } from './users/users-active/users-active.componen
 import { RolesActiveComponent } from './roles/roles-active/roles-active.component';
 import { RoleAddNewComponent } from './roles/role-add-new/role-add-new.component';
 import { UserAddNewComponent } from './users/user-add-new/user-add-new.component';
+import { UserEditComponent } from './users/user-edit/user-edit.component';
+import { UsersRolesComponent } from './users/users-roles/users-roles.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +33,8 @@ import { UserAddNewComponent } from './users/user-add-new/user-add-new.component
     RolesActiveComponent,
     RoleAddNewComponent,
     UserAddNewComponent,
+    UserEditComponent,
+    UsersRolesComponent,
     //BrowserAnimationsModule,
   ],
   imports: [
@@ -38,6 +42,8 @@ import { UserAddNewComponent } from './users/user-add-new/user-add-new.component
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule,
     MatTableModule,
     MatSortModule,
     MatPaginatorModule,

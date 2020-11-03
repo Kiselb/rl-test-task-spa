@@ -1,1 +1,8 @@
-<p>role-add-new works!</p>
+<p class="header">Регистрация роли</p>
+<input class="rolename" type="text" placeholder="Введите имя роли" [formControl]="name">
+<button class="button" (click)="trySave()">Создать</button>
+<div class="spinner-container" *ngIf="IsWait">
+    <div class="spinner-centered">
+        <mat-progress-spinner mode="indeterminate" *ngIf="IsWait" class="spinner"></mat-progress-spinner>
+    </div>
+</div>

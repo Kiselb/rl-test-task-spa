@@ -76,6 +76,17 @@ th.mat-column-position, td.mat-column-position {
 .mat-column-Id {
     min-width: 2em;
 }
+.mat-column-Roles.mat-cell {
+    min-width: 2.75em;
+    cursor: pointer;
+    color: blue;
+}
+.mat-column-Roles.mat-cell:hover {
+    color: #FCAC45;
+}
+.mat-column-Roles.mat-cell:active {
+    color: #000;
+}
 .mat-column-Login.mat-cell {
     min-width: 2.75em;
     cursor: pointer;

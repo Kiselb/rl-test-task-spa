@@ -1,7 +1,7 @@
-<p class="header">Регистрация пользователя</p>
+<p class="header">Описание пользователя</p>
 <form class="params" [formGroup]="fgParams">
     <p>
-        <label>Логин:</label><input type="text" formControlName="ctrlLogin"/>
+        <label>Логин:</label><input type="text" readonly formControlName="ctrlLogin"/>
     </p>
     <p>
         <label>Имя:</label><input type="text" formControlName="ctrlName"/>
@@ -10,10 +10,7 @@
         <label>email:</label><input type="text" formControlName="ctrlEmail"/>
     </p>
     <p>
-        <label>Пароль:</label><input type="text" formControlName="ctrlPassword"/>
-    </p>
-    <p>
-        <label>&nbsp;</label><input type="button" value="Зарегистрировать" [disabled]="!fgParams.valid" (click)="trySave()"/>
+        <label>&nbsp;</label><input type="button" value="Сохранить" [disabled]="!fgParams.valid" (click)="trySave()"/>
     </p>
 </form>
 <div class="spinner-container" *ngIf="IsWait">

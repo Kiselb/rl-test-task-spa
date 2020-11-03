@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable, throwError } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from 'src/environments/environment';
 
 export interface IRole {
@@ -22,6 +22,13 @@ export class RolesService {
 
   public getRoles(): Observable<IRole[]> {
     return this.httpClient.get<IRole[] | any>(`https://localhost:5001/roles`, { headers: {'Accept': 'application/json' }, withCredentials: true })
+    .pipe(map(response => response))
+    .pipe(catchError(error => { console.log(error); return throwError(error); }));
+  }
+  public addNew(role: IRole): Observable<any> {
+    const headers = new HttpHeaders();
+    headers.set('Content-Type', 'application/json');
+    return this.httpClient.post<IRole>(`https://localhost:5001/roles`, role, { headers: headers, reportProgress: false, observe: 'response', withCredentials: true })
     .pipe(map(response => response))
     .pipe(catchError(error => { console.log(error); return throwError(error); }));
   }
