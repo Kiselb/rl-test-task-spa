@@ -12,6 +12,13 @@ export interface IUser {
   Email: string;
   Password?: string;
 }
+
+export interface IUsersRoles {
+  UserId: number;
+  RoleId: number;
+  RoleName: string;
+}
+
 @Injectable({
   providedIn: 'root'
 })
@@ -45,9 +52,20 @@ export class UsersService {
 
   public update(user: IUser): Observable<any> {
     const headers = new HttpHeaders();
-    console.log(user);
     headers.set('Content-Type', 'application/json');
     return this.httpClient.put<IUser>(`https://localhost:5001/users/${user.Id}`, user, { headers: headers, reportProgress: false, observe: 'response', withCredentials: true })
+    .pipe(map(response => response))
+    .pipe(catchError(error => { console.log(error); return throwError(error); }));
+  }
+
+  public getUsersRoles(userId: number): Observable<IUsersRoles[]> {
+    return this.httpClient.get<IUsersRoles[] | any>(`https://localhost:5001/users/${userId}/roles`, { headers: {'Accept': 'application/json' }, withCredentials: true })
+    .pipe(map(response => response))
+    .pipe(catchError(error => { console.log(error); return throwError(error); }));
+  }
+
+  public removeUsersRoles(userId: number, roleId: number): Observable<any> {
+    return this.httpClient.delete<any>(`https://localhost:5001/users/${userId}/roles/${roleId}`, { withCredentials: true })
     .pipe(map(response => response))
     .pipe(catchError(error => { console.log(error); return throwError(error); }));
   }

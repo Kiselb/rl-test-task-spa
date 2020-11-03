@@ -14,6 +14,7 @@ import { MatExpansionModule } from '@angular/material/expansion';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSelectModule } from '@angular/material/select';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -53,6 +54,7 @@ import { UsersRolesComponent } from './users/users-roles/users-roles.component';
     MatButtonModule,
     MatExpansionModule,
     MatProgressSpinnerModule,
+    MatSelectModule,
   ],
   providers: [
     HttpClientModule,
