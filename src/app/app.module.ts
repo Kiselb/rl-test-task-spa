@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
 
 import { MatTableModule } from '@angular/material/table';
 import { MatSortModule } from '@angular/material/sort';
@@ -25,6 +26,9 @@ import { RoleAddNewComponent } from './roles/role-add-new/role-add-new.component
 import { UserAddNewComponent } from './users/user-add-new/user-add-new.component';
 import { UserEditComponent } from './users/user-edit/user-edit.component';
 import { UsersRolesComponent } from './users/users-roles/users-roles.component';
+import { LoginComponent } from './users/login/login.component';
+import { JwtinterceptorService } from './users/login/jwtinterceptor.service';
+import { AboutComponent } from './about/about.component';
 
 @NgModule({
   declarations: [
@@ -36,6 +40,8 @@ import { UsersRolesComponent } from './users/users-roles/users-roles.component';
     UserAddNewComponent,
     UserEditComponent,
     UsersRolesComponent,
+    LoginComponent,
+    AboutComponent,
     //BrowserAnimationsModule,
   ],
   imports: [
@@ -58,7 +64,8 @@ import { UsersRolesComponent } from './users/users-roles/users-roles.component';
   ],
   providers: [
     HttpClientModule,
-    HttpClient
+    HttpClient,
+    { provide: HTTP_INTERCEPTORS, useClass: JwtinterceptorService, multi: true}
   ],
   bootstrap: [AppComponent]
 })

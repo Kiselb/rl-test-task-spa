@@ -17,7 +17,7 @@ export class UsersRolesDataSource implements DataSource<IUsersRoles> {
         this.usersRolesSubject.complete();
     }
 
-    getUsers() {
+    getUsersRoles() {
         this.usersService.getUsersRoles(this.userId)
         .pipe(catchError(() => of([])))
         .subscribe(usersRoles => this.usersRolesSubject.next(usersRoles));

@@ -1,0 +1,66 @@
+:host {
+    grid-area: content;
+}
+.prompt {
+    font-family: inherit;
+    font-size: 1.3125em;
+    margin: 10vh auto 0 auto;
+    text-align: center;
+}
+.login {
+    margin-top: 2vh;
+}
+::placeholder {
+    color: #BBB;
+    opacity: 1;
+}
+.login__input {
+    display: block;
+    width: 13.75em;
+    height: 2.125em;
+    font-family: inherit;
+    font-size: 0.875em;
+    padding: 0.375em 0.25em 0.375em 0.25em;
+    box-sizing: border-box;
+    border: 1px solid #DFDFDF;
+    text-align: center;
+}
+.login__input-place {
+    display: block;
+    margin: 0 auto 0.6875em auto;
+}
+.login__button {
+    width: 13.75em;
+    height: 2.125em;
+    font-family: inherit;
+    font-size: 0.875em;
+    background-color: #EAEAEA;
+    color: #888;
+    border: 1px solid #DFDFDF;
+    border-radius: 2px;
+}
+.login__button-place {
+    display: block;
+    margin: 0 auto 0.625em auto;
+}
+.login__button-place:hover {
+    color: #000 !important;
+}
+.login__button-place:active:hover {
+    color: #FFF !important;
+    background-color:#000 !important;
+}
+.login__restore {
+    font-size: 0.875em;
+    color: #BFBFBF;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+}
+.login__restore-place {
+    display: block;
+    margin-top:1.5em;
+}
+.login__restore-place:hover {
+    color: #000 !important;
+}

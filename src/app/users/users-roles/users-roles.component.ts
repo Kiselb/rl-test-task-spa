@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ActivatedRoute, ParamMap } from '@angular/router';
+import { RolesService } from 'src/app/roles/roles.service';
 import { IUser, UsersService } from '../users.service';
 import { UsersRolesDataSource } from './users-roles.datasource';
 
@@ -14,25 +15,39 @@ export class UsersRolesComponent implements OnInit {
   userId: number;
   dataSource: UsersRolesDataSource = null;
   displayedColumns: string[] = ['Id', "Delete", 'Name'];
-  selectedValue: number;
+  selectedRole: number;
 
-  roles = [
-    { Id: 1, Name: "Admin"},
-    { Id: 1, Name: "AdminL1"},
-    { Id: 1, Name: "AdminL2"},
-    { Id: 1, Name: "AdminL4"},
-  ];
-  
+  roles = [];
+
   constructor(
     private router: Router,
     private route: ActivatedRoute,
-    private usersService: UsersService
+    private usersService: UsersService,
+    private rolesService: RolesService
   ) { }
+
+  rolesRequery() {
+    this.dataSource = new UsersRolesDataSource(this.userId, this.usersService);
+    this.dataSource.getUsersRoles();      
+}
+  tryAddRole() {
+    console.log(`UserId: ${this.userId} RoleId: ${this.selectedRole}`);
+    this.usersService.addUsersRoles(this.userId, this.selectedRole).subscribe(
+      response => {
+        console.log("OK");
+        this.rolesRequery();
+      },
+      error => {
+        console.log(error);
+      }
+    );
+  }
 
   tryRemoveRole(roleId: number) {
     this.usersService.removeUsersRoles(this.userId, roleId).subscribe(
       response => {
         console.log("OK");
+        this.rolesRequery();
       },
       error => {
         console.log(error);
@@ -45,8 +60,23 @@ export class UsersRolesComponent implements OnInit {
       this.userId = +params.get('id');
       console.log(`UserID: ${this.userId}`);
       this.dataSource = new UsersRolesDataSource(this.userId, this.usersService);
-      this.dataSource.getUsers();      
+      this.dataSource.getUsersRoles();      
     });
+    this.rolesService.getRoles().subscribe(
+      response => {
+        console.log(response);
+        this.roles = response.sort((roleA, roleB) => {
+          if (roleA["name"] > roleB["name"])
+            return 1;
+          if (roleA["name"] < roleB["name"])
+            return -1;
+          return 0;
+        });
+      },
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }

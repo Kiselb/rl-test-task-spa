@@ -1,10 +1,10 @@
 <div class="addrole">
-    <mat-select class="addrole-input" [(ngModel)]="selectedValue" name="role" placeholder="Выберите роль">
-        <mat-option *ngFor="let role of roles" [value]="role.Id">
-          {{role.Name}}
+    <mat-select class="addrole-input" [(ngModel)]="selectedRole" name="role" placeholder="Выберите роль">
+        <mat-option *ngFor="let role of roles" [value]="role.id">
+          {{role.name}}
         </mat-option>
     </mat-select>
-    <button class="addrole-button" #button>Добавить</button>
+    <button class="addrole-button" (click)="tryAddRole()" #button>Назначить</button>
 </div>
 <div class="table-container">
     <table mat-table [dataSource]="dataSource" matSort matSortActive="Login" matSortDisableClear matSortDirection="asc">
