@@ -1,4 +1,11 @@
-# RlTestTaskSPA
+# Тестовое приложение SPA-часть
+
+Данный проект является SPA-частью тестового задания. Проект разработан
+с использованием Angular.
+
+API-часть проекта размещена [здесь](https://github.com/Kiselb/rl-test-task)
+
+## RlTestTaskSPA
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
 
