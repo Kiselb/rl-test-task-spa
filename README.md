@@ -5,6 +5,10 @@
 
 API-часть проекта размещена [здесь](https://github.com/Kiselb/rl-test-task)
 
+Вход в приложение http://localhost:4200/login
+Admin 0123456789
+
+
 ## RlTestTaskSPA
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.22.
